@@ -1,4 +1,3 @@
-
 function setWidth () {
 	var width = 100;
 	console.log('setWidth: ', width)
