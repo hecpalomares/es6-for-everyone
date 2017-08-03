@@ -17,8 +17,7 @@ function arrowFunctions2() {
 	];
 
 	const countriesFromAmerica = countries.filter(country => country.continent == 'America');
-
-	console.log(countriesFromAmerica);
+	
 }
 
 arrowFunctions2();
