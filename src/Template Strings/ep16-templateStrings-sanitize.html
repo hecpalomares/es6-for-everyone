@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>EP 16: Sanitize with tagged templates</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="description" content="Demo project">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<style type="text/css"></style>
+	</head>
+	<body>
+		<div class="bio"></div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/0.9.0/purify.min.js"></script>
+		<script>
+				function sanitize(strings, ...values) {
+					const dirty = strings.reduce((prev, next, i) => {
+						return `${prev}${next}${values[i] || ''}`	
+					}, '');
+					
+					return DOMPurify.sanitize(dirty);
+				}
+
+				const first = 'Hector';
+				const aboutMe = sanitize`Enjoy this cup of coffee! <img src="https://static.pexels.com/photos/19586/cup-hot-hands.jpg" style="width: 100px; height: 100px" onload="alert('You got hacked');"/>`;
+
+				const html = `
+					<h2>${first}</h2>
+					<p>${aboutMe}</p>
+				`;
+
+				const bio = document.querySelector('.bio');
+				bio.innerHTML = html;
+
+		</script>
+	</body>
+</html>
