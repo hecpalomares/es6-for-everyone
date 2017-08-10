@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Demo</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="description" content="Demo project">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<style type="text/css"></style>
+	</head>
+	<body>
+		<div class="bio"></div>
+		<script>
+			const dict = {
+				HTML: 'Hyper Text Markup Language',
+				CSS: 'Cascade Style Sheets',
+				JS: 'Javascript'
+			}
+
+			function addAbberviations (strings, ...values) {
+				const abbreviated = values.map(value => {
+					if(dict[value]) {
+						return `<abbr title="${dict[value]}">${value}</abbr>`
+					}
+					return value;
+				});
+				
+				return strings.reduce((sentence, string, i) => {
+					return `${sentence}${string}${abbreviated[i] || ''}`;
+				}, '');
+			}
+
+			const name = 'Héctor';
+			const lastName = 'Palomares';
+
+			const sentence = addAbberviations`Hello my name is ${name} ${lastName} and I code ${'HTML'}, ${'CSS'}, ${'JS'}`;
+
+			const bio = document.querySelector('.bio');
+			const p = document.createElement('p');
+			p.innerHTML = sentence;
+			bio.appendChild(p);
+
+		</script>
+	</body>
+</html>
