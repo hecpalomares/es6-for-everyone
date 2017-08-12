@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>EP 17: String Methods</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="description" content="Demo project">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<style type="text/css"></style>
+	</head>
+	<body>
+		<p>New string methods</p>
+		<script>
+			const drink = 'Wine';
+			const flightNumber = '456-XHS-856';
+			const accountNumber = '345678XOP976';
+
+			const name = 'Hector';
+			const lastName = 'Palomares';
+			const pet = 'Likes dogs';
+
+			console.log(drink.startsWith('Wi')); //True
+			console.log(drink.startsWith('ne', 2)); //True
+
+			console.log(flightNumber.endsWith('-856')); //True
+			console.log(flightNumber.endsWith('-XHS')); //False
+
+			console.log(accountNumber.includes('XOP')); //True
+			console.log(accountNumber.includes('XP')); //False
+
+			function leftPad(string, length = 16) {
+				return `${' '.repeat(length - string.length)}${string}`;
+			}
+
+			console.log(leftPad(name));
+			console.log(leftPad(lastName));
+			console.log(leftPad(pet));
+		</script>
+	</body>
+</html>
