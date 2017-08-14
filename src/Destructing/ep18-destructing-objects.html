@@ -7,7 +7,7 @@
 	    <meta name="description" content="Demo project">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<style type="text/css"></style>
+		<style></style>
 	</head>
 	<body>
 		<script>
@@ -15,8 +15,29 @@
 				first: 'Hector',
 				last: 'Palomares',
 				country: 'México',
-				age: 25
+				age: 25,
+				links: {
+					social: {
+						facebook: 'www.facebook.com',
+						twitter: 'www.twitter.com'
+					},
+					web: {
+						homepage: 'www.hectorpalomares.com'
+					}
+				}
 			};
+
+			const { twitter:tweet, facebook:fb} = person.links.social;
+
+			const settings = { width: 300, height: 300};
+
+			const { width = 100, height = 200, color = 'blue', fontsize = 25 } = settings;
+
+			//Width = 300, since const settings was declared with it
+			//Height = 300, since const settings was declared with it
+			//Color = blue, sets to default of the object
+			//Fontsize = 25, sets to default of the object
+
 		</script>
 	</body>
 </html>
