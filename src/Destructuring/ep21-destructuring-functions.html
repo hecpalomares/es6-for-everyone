@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>EP21: Destructuring Functions</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="description" content="Demo project">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<script>
+			function convertedCurrencyMX (amount) {
+				const converted = {
+					USD: amount * .056182,
+					Euro: amount * .04750,
+					CAN: amount * .07122,
+					GBP: amount * .04316
+				};
+				return converted;
+			}
+
+			const { USD, Euro, CAN, GBP } = convertedCurrencyMX(100);
+			console.log('Euros: '+ Euro.toFixed(2), 'Candian: ' + CAN.toFixed(2));
+
+			function tipCalc ({total, tip = 0.15, tax = 0.13} = {}) {
+				return (total + (total * tip) + (tax * total));
+			}
+
+			const bill = tipCalc({tip: 0.20, total: 200});
+			console.log(bill);
+
+		</script>
+	</body>
+</html>
