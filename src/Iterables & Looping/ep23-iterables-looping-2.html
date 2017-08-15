@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>EP23: Iterables & Looping 2</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="description" content="Demo project">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<script>
+			const movies = ['Alien', 'Gladiator', 'Memento', 'Dunkirk', 'Inception'];
+
+			/*	For of do not list if you mess with properties.
+			* 	Can use break and continue inside loop
+			*/
+			for (const movie of movies) {
+				if(movie === 'Memento') {
+					continue;
+				}
+				console.log(movie);
+			}
+
+		</script>
+	</body>
+</html>
