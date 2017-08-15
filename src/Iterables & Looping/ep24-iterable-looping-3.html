@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>EP24: Iterables & Looping 3</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="description" content="Demo project">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<script>
+			const apple = {
+				color: 'green',
+				size: 'small',
+				weight: 125
+			};
+
+			//For of Object.keys
+			for (const prop of Object.keys(apple)) {
+				const value = apple[prop];
+			}
+
+			//For in object
+			for(const prop in apple) {
+				const value = apple[prop];
+			}
+
+		</script>
+	</body>
+</html>
