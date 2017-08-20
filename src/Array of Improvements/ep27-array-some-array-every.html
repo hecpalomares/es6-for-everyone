@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>EP27: Array some() and every()</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="description" content="Demo project">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<script>
+			const ages = [12, 25, 33, 21, 50, 43];
+
+			//Some(). Returns a true boolean if one of items
+			const adultsPresent = ages.some(age => age >= 18 );
+			console.log(adultsPresent);
+
+			//Every() Returns a true boolean if everyone of the items meet the criteria
+			const everyoneCanDrink = ages.every(age => age >= 21);
+			console.log(everyoneCanDrink);
+
+		</script>
+	</body>
+</html>
