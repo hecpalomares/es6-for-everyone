@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EP31: Spreading into function</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="Demo project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<script>
+		//Avoid the array inside another array after a push
+		const inventors = ['Einstein', 'Newton', 'Galileo'];
+		const newInventors = ['Musk', 'Zuckerberg', 'Jobs'];
+
+		inventors.push(...newInventors);
+
+		//Spreading variable into a function to use the parameters
+		const myName = ['Hector', 'Palomares'];
+
+		function sayName(first, last) {
+			console.log(`Hey ${first} ${last} nice too meet you!`);
+		}
+
+		sayName(...myName);
+
+	</script>
+</body>
+</html>

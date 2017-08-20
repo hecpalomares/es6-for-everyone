@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EP32: The ...Rest Param</title>
+</head>
+<body>
+<script>
+  
+  //Rest parameters, takes multiple arguments and bundle them into a array
+  function convertCurrency (rate, ...amounts) {
+    return amounts.map(ammount => ammount * rate);
+  }
+
+  const convertedAmmounts = convertCurrency(17.5, 100, 200, 300);
+
+  //Rest parameter in destructuring, bundle the rest of the parameters into a array
+  const swimmer = ['Hector P', 1321, 2, 1.5, 1, 3.3, 2];
+  const [name, id, ...swims] = swimmer;
+
+
+</script>
+</body>
+</html>
