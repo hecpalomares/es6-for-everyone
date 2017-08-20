@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EP28: The ...Spread Operator</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="Demo project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<script>
+		const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
+		const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];
+
+		//Assign values into the middle of it
+		let pizzas = [...featured, 'Veggie', ...specialty];
+		console.log(pizzas);
+
+		//Copy an array, not a reference
+		let pizzasFriday = [...pizzas];
+
+		const deepDish = {
+			pizzaName: 'Deep Dish',
+			size: 'Medium',
+			ingredients: ['Marinara', 'Italian Sausage', 'Dough', 'Cheese']
+		};
+	</script>
+</body>
+</html>
