@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spread Examples</title>
+</head>
+<body>
+  <div class="people">
+    <p>Andrew</p>
+    <p>Peyton</p>
+    <p>Tom</p>
+  </div>
+  <script>
+
+    //Ex 1
+    //Spread (...) works similar to Array.From. Becouse nodelist is an iterable and spread them into an array
+    const people = [...document.querySelectorAll('.people p')];
+    const names = people.map(person => person.textContent);
+
+    //Ex 2
+    //True Copy, not a reference
+    const deepDish = {
+      pizzaName: 'Deep Dish',
+      size: 'Medium',
+      ingredients: ['Marinara', 'Italian Sausage', 'Dough', 'Cheese']
+    };
+    const shoppingList = ['Flour', 'Wheat', ...deepDish.ingredients];
+
+
+    //Ex 3
+    const comments = [
+    { id: 209384, text: 'I love your dog!' },
+    { id: 523423, text: 'Cuuute! 🐐' },
+    { id: 632429, text: 'You are so dumb' },
+    { id: 192834, text: 'Nice work on this wes!' },
+    ];
+
+   const id = 632429;
+   const commentIndex = comments.findIndex(comment => comment.id === id);
+
+   //Without (...) we get an Array of Arrays
+   const newComments = [...comments.slice(0, commentIndex), ...comments.slice(commentIndex + 1)];
+   console.log(newComments);
+
+  </script>
+</body>
+</html>
