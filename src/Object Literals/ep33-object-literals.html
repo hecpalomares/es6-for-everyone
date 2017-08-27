@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>EP33: Object Literals</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="description" content="Demo project">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<style></style>
+	</head>
+	<body>
+		<script>
+			//No need to redeclare property:value if you want to be named the same (the case for most of the times)
+			const first = 'Hector';
+			const last = 'Palomares';
+			const age = 25;
+			const country = 'Mexico';
+
+			const me = {
+				first,
+				last,
+				age,
+				country
+			};
+
+			console.log(me);
+
+			//Functions can be named without function() keyword
+			const modal = {
+				create(selector) {
+
+				},
+				open(content) {
+
+				},
+				close(goodbye) {
+
+				}
+			}
+
+			// Compute Property Keys inside object literal
+			// const key = 'pocketColor';
+			// const value = 'red';
+
+			// const tshirt = {
+			// 	[key]: value,
+			// 	[`${key}Opposite`]: invertColor(value)
+			// };
+
+			const keys = ['size', 'color', 'price'];
+			const values = ['med', 'red', '100'];
+
+			const shirt = {
+				[keys.shift()] : values.shift(),
+				[keys.shift()] : values.shift(),
+				[keys.shift()] : values.shift()	
+			}  
+
+			console.log(shirt);
+
+		</script>
+	</body>
+</html>
