@@ -6,9 +6,18 @@
 </head>
 <body>
 <script>
-  const wes = Symbol('Wes');
-  const person = Symbol('Wes');
+  //Hector and person and not the same since they´re unique
+  const hector = Symbol('Hector');
+  const person = Symbol('Hector');
 
+  const classRoom = {
+    [Symbol('Mark')]: {grade: 50, gender: 'male'},
+    [Symbol('Olivia')]: {grade: 70, gender: 'female'},
+    [Symbol('Mark')]: {grade: 88, gender: 'male'}
+  };
+
+  const syms = Object.getOwnPropertySymbols(classRoom);
+  const data = syms.map(sym => classRoom[sym]);
 
 </script>
 </body>
