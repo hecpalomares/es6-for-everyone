@@ -10,12 +10,14 @@
   const hector = Symbol('Hector');
   const person = Symbol('Hector');
 
+  //Good for storing private data
   const classRoom = {
     [Symbol('Mark')]: {grade: 50, gender: 'male'},
     [Symbol('Olivia')]: {grade: 70, gender: 'female'},
     [Symbol('Mark')]: {grade: 88, gender: 'male'}
   };
 
+  //Loop over the symbols
   const syms = Object.getOwnPropertySymbols(classRoom);
   const data = syms.map(sym => classRoom[sym]);
 
