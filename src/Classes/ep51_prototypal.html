@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EP51: Prototypal Review</title>
+</head>
+<body>
+<script>
+
+  //Constructor function
+  function Dog(name, breed){
+    this.name = name;
+    this.breed = breed;
+  }
+
+  const nacho = new Dog('Nacho', 'Labrador');
+	const rutila = new Dog('Rutila', 'Pomeranian');  
+
+	//I can override it
+	Dog.prototype.doBark = function() {
+  	console.log(`My name is ${this.name}`);
+  }
+
+  //I can add new even after they are created
+ 	Dog.prototype.getBreed = function() {
+  	console.log(`My name is ${this.breed}`);
+  }
+
+</script>
+</body>
+</html>
