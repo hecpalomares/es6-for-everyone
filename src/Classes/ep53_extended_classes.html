@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EP53: Extended Classes and super()</title>
+</head>
+<body>
+<script>
+  class Animal {
+    constructor(name) {
+      this.name = name;
+      this.thirst = 100;
+      this.belly = [];
+    }
+
+    drink() {
+      this.thirst -= 10;
+      return this.thirst;
+    }
+
+    eat(food) {
+      this.belly.push(food);
+      return this.belly;
+    }
+  }
+
+  //Inherited becouse we extended the animal
+  class Dog extends Animal {
+  	constructor(name, breed){
+  		super(name);
+  		this.breed = breed;
+  	}
+  	bark() {
+  		console.log('Bark bark!');
+  	}
+  }
+
+  const nacho = new Dog('Nacho', 'Labrador');
+  const rhino = new Animal('Rhin');
+
+</script>
+</body>
+</html>
