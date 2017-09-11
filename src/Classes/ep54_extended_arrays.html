@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EP54: Extended Arrays</title>
+</head>
+<body>
+<script>
+
+  class MovieCollection extends Array {
+    constructor(name, ...items){
+      super(...items);
+      this.name = name;
+    }
+
+    add(movie) {
+      this.push(movie);
+    }
+
+    topRated(limit = 5) {
+      return this.sort((a, b) => (a.rating > b.rating ? -1 : 1)).slice(0, limit);
+    }
+  }
+
+  const movies = new MovieCollection('H fav movies', 
+    {name: "Star Wars Episode I", rating: 4 },
+    {name: "Star Wars Episode II", rating: 3 },
+    {name: "Star Wars Episode III", rating: 6 },
+    {name: "Star Wars Episode IV", rating: 7}
+  );
+
+  movies.add({name: 'Star Wars Episode V', rating: 8});
+
+  // for(movie of movies) {
+  //   console.log(movie.rating);
+  // }
+
+  console.table(movies.topRated(3));
+
+</script>
+</body>
+</html>
