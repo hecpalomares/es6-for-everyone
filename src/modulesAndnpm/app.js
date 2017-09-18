@@ -3,11 +3,12 @@ import insane from 'insane';
 import jsonp from 'jsonp';
 import { apiKey as key, url, sayHi, name, old } from './src/config'
 
-const ages = [1, 1, 2, 5, 2, 23, 33, 17, 21];
+import User, { createURL, gravatar } from './src/user';
 
-console.log(uniq(ages));
-console.log(key, url);
+const me = new User('Hector Palomares', 'hector.palomares@me.com', 'hectorpalomares.com');
+const profile = createURL(me.name);
+const gravatarProfile = gravatar(me.email);
 
-console.log(name, old);
-
-sayHi();
+console.log(me);
+console.log(profile);
+console.log(gravatarProfile);
