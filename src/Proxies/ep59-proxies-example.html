@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EP59: Proxie Example</title>
+</head>
+<body>
+<script>
+  //Pass a proxy between set and get
+  const phoneHandler = {
+    set(target, name, value) {
+      target[name] = value.match(/[0-9]/g).join('');
+    },
+    get(target, name){
+      return target[name].replace(/(\d{3})(\d{3})(\d{4})/, '($1)-$2-$3');
+    }
+  }
+
+  //Set values on a blank object
+  const phoneNumbers = new Proxy({}, phoneHandler);
+
+</script>
+</body>
+</html>

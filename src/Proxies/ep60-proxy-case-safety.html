@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EP60: Proxies Safety Typing</title>
+</head>
+<body>
+<script>
+  //Building a library example, spelling typos for ID, properties etc
+ 
+  const safeHandler = {
+    set(target, name, value) {
+      const likeKey = Object.keys(target).find(k => k.toLowerCase() === name.toLowerCase());
+      
+      if(!(name in target) && likeKey) {
+        throw new Error(`We already have the property ${name} property called ${likeKey}. Please use it.`);
+      }
+      //Otherwise set new property
+      target[name] = value;
+    }
+  };
+
+  const safety = new Proxy({ id: 100 }, safeHandler);
+
+  safety.ID = 200;
+
+</script>
+</body>
+</html>
