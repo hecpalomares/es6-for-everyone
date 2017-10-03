@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EP61: Sets</title>
+</head>
+<body>
+<script>
+  // You cant reference student with indexs.
+  // IT IS NOT INDEX BASED like arrays.
+  const people = new Set();
+
+  // API: Add to set
+  people.add('Hector');
+  people.add('Andrew');
+  people.add('Sam');
+
+  // Iterate over the values
+  for(const person of people) {
+    console.log(person);
+  }
+
+  // Initialize set with values
+  const students = new Set(['Hugo', 'Paco', 'Luis']);
+
+  // Delete element from the set
+  students.delete('Hugo');
+
+  // Has a value / entries on the set
+  let hasPaco = students.has('Paco');
+
+  // Size of the set
+  let studentSize = students.size
+
+  // Delete whole set
+  students.clear();
+
+</script>
+</body>
+</html>

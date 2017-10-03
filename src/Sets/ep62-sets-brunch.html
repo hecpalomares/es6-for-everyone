@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EP62: Sets with Brunch</title>
+</head>
+<body>
+<script>
+  const brunch = new Set();
+  // as people start comign in
+  brunch.add('Hector');
+  brunch.add('Andrew');
+  brunch.add('Peyton');
+
+  // ready to open
+  const line = brunch.values();
+  // Pop the first elements on the line
+  console.log(line.next().value);
+
+  // Push two new elements
+  brunch.add('Hugo');
+  brunch.add('Paco');
+  console.log(line.next().value);
+  
+  console.log("Line is", line);
+  
+</script>
+</body>
+</html>

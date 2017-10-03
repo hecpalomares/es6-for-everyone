@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EP63: Weaksets</title>
+</head>
+<body>
+<script>
+  // Weaksets can only contain objects
+  let dog1 = { name: 'Nacho', age: 8 };
+  let dog2 = { name: 'Thor', age: 3 }; 
+
+  const weakSauce = new WeakSet([dog1, dog2]);
+
+  // Automically garbage collected, takes care of memory leak
+  console.log(weakSauce);
+  dog1 = null;
+  console.log(weakSauce);
+
+</script>
+</body>
+</html>
