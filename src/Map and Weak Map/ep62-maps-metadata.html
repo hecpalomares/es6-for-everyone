@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EP62: Mapmetadata and DOM Node Keys</title>
+</head>
+<body>
+	
+	<button>Snakes</button>
+	<button>Birds</button>
+	<button>Dogs</button>
+	<button>Cats</button>
+	<button>Tigers</button>
+	<button>Lions</button>
+
+<script>
+	// Store metadata about an object
+	const clickCounts = new Map();
+	const buttons = document.querySelectorAll('button');
+
+	buttons.forEach(button => {
+		clickCounts.set(button, 0);
+		button.addEventListener('click', function() {
+			const val = clickCounts.get(this);
+			clickCounts.set(this, val + 1);
+		});
+	});
+
+</script>
+</body>
+</html>

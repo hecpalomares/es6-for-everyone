@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EP63: WeakMap and Garbage Collection</title>
+</head>
+<body>
+<script>
+	// Weak maps are garbage collected after some seconds. They do not have size. They cannot be looped. Useful if we dont need to babysit the inside of a map
+
+	let dog1 = { name: 'Nacho' };
+	let dog2 = { name: 'Thor' };
+
+	const strong = new Map();
+	const weak = new WeakMap();
+
+	strong.set(dog1, 'Nacho is good');
+	weak.set(dog2, 'Sunny is crazy');
+
+	dog1 = null;
+	dog2 = null;
+
+</script>
+</body>
+</html>
