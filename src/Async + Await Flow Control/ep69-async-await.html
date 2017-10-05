@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EP:68 Async + Await</title>
+</head>
+<body>
+<script>
+  // Async await unblocks the javascript from running other tasks
+  // First made a async function, then await the value
+  // Built on top of promises
+
+  function breathe(amount) {
+    return new Promise((resolve, reject) => {
+      if(amount < 500) {
+        reject('Number too small');
+      }
+      setTimeout(() => resolve(`Done for ${amount} ms`), amount);
+    });
+  }
+
+  // You cannot use await out, you need 'async' on the function
+  // you can only 'await' matcvhing on a promise
+  async function go() {
+    console.log('start breathe');
+    const res = await breathe(2000);
+    console.log(res);
+    const res2 = await breathe(1500);
+    console.log(res2);
+     const res3 = await breathe(400);
+    console.log(res3);
+    console.log('end breathe');
+  }
+
+  go();
+
+</script>
+</body>
+</html>

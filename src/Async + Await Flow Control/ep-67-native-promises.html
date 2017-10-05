@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EP:67 Async + Await Flow Control</title>
+</head>
+<body>
+  
+  <video controls class="me"></video>
+
+<script>
+  // fetch do not asume json
+/*  const res = fetch('hps://api.github.com/users/hecpalomares').then(res => {
+    return res.json();
+  }).then(res => {
+    console.log(res);
+  }).catch(err => {
+    console.log(error);
+  });*/
+  
+
+  const video = document.querySelector('.me');
+
+  // native promsies
+  navigator.mediaDevices.getUserMedia({ video: true }).then(mediaStream => {
+    video.srcObject = mediaStream;
+    video.load();
+    video.play();
+  }).catch(err => {
+    console.log('You did not allow the camera');
+  });
+
+</script>
+</body>
+</html>
