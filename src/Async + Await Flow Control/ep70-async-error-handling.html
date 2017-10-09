@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EP:70 Async + Await (Error Handling)</title>
+</head>
+<body>
+<script>
+  // Async await unblocks the javascript from running other tasks
+  // First made a async function, then await the value
+  // Built on top of promises
+
+  function breathe(amount) {
+    return new Promise((resolve, reject) => {
+      if(amount < 500) {
+        reject(`The number ${amount} is too small`);
+      }
+      setTimeout(() => resolve(`Done for ${amount} ms`), amount);
+    });
+  }
+
+  // You cannot use await out, you need 'async' on the function
+  // you can only 'await' matching on a promise
+  async function go(name, lastName) {
+    console.log(`Start breathe for ${name} ${lastName}`);
+    const res = await breathe(2000);
+    console.log(res);
+    const res2 = await breathe(1500);
+    console.log(res2);
+    const res3 = await breathe(400);
+    console.log(res3);
+    console.log('end breathe');
+  }
+
+  // High order function, is a function that takes another function and returns a function (Function Factory)
+  // Using spread parameters
+  function catchErrors(fn) {
+    // Using rest parameters capture all arguments on array
+    return function(...args) {
+      // Using spread parameters spread them into the function
+      return fn(...args).catch(err => {
+        console.error('ERROR!');
+        console.error(err);
+      })
+    }
+  }
+
+  const wrappedFunction = catchErrors(go);
+
+  wrappedFunction('Hector', 'G');
+
+</script>
+</body>
+</html>
