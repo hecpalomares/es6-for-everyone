@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EP:71 Waiting on Multiple Promises</title>
+</head>
+<body>
+<script>
+
+/*  async function go() {
+    const promise1 = await fetch('https://api.github.com/users/hecpalomares');
+    const promise2 = await fetch('https://api.github.com/users/emmyyusufu');
+    // Wait for both of them to comeback
+    // Creates a mega promise that waits for both promises
+    const res = await Promise.all([promise1, promise2]);
+    const dataPromise = res.map(r => r.json());
+    const [hector, emm] = await Promise.all(dataPromise);
+    console.log(hector, emm);
+  }*/
+
+  async function getData(names) {
+    const promises = names.map(name => fetch(`https://api.github.com/users/${name}`)
+                          .then(r => r.json()));
+    // Wait for both of them to comeback
+    // Creates a mega promise that waits for both promises
+    const people = await Promise.all(promises);
+    console.log(people);
+  }
+
+  getData(['hecpalomares', 'emmyyusufu', 'wesbos']);
+
+</script>
+</body>
+</html>
