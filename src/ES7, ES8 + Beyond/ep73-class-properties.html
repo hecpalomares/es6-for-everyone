@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EP73: Class Properties</title>
+</head>
+<body>
+<script>
+
+  //ES6 Classes function
+  class Dog {
+    //Requires a constructor function
+    constructor(name, breed) {
+      this.name = name;
+      this.breed = breed;
+      this.barks = 0;
+    }
+
+    // Class propierties, we can avoid putting the instance into the constructor. We can access them via this.propertyName 
+    // barks = 0;
+
+    bark() {
+      this.barks = this.barks + 1;
+      console.log(`Bark! Bark! my name is ${this.name}`);
+      console.log(this.barks)
+    }
+
+    getBreed() {
+      console.log(`My breed is ${this.breed}`);
+    }
+  
+    cuddle() {
+      console.log(`Sniffle sniffle`);
+    }
+
+    // Dog.info()
+    static info() {
+      console.log(`This is a Dog class example`);
+    }
+
+    // Set property nickname
+    set nicknames(value) {
+      this.nickname = value.trim();
+    }
+
+    // Get property nickname
+    get nicknames() {
+      return this.nickname.toUpperCase();
+    }
+
+    // Get description property
+    get description() {
+      return `${this.name} is a type ${this.dog} with the nickname ${this.nickname}`;
+    }
+  }
+
+  const nacho = new Dog('Nacho', 'Labrador');
+  const rutila = new Dog('Rutila', 'Pomeranian');  
+
+</script>
+</body>
+</html>

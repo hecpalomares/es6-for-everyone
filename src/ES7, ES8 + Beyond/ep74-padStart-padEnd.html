@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EP74: Pad Start and Pad End</title>
+</head>
+<body>
+<script>
+  const strings = ['short', 'medium string', 'this is a longer string'];
+  const longestString = strings.sort(str => str.length).map(str => str.length)[0];
+
+  strings.forEach(str => console.log(str.padStart(longestString)));
+
+  // Pad/fill the number until it reachs the first paramter
+  let number = '10'.padStart(4, '0');
+
+  console.log(number);
+
+</script>
+</body>
+</html>
