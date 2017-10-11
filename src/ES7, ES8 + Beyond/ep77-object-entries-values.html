@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EP77: Object.entries() and Object.values()</title>
+</head>
+<body>
+<script>
+	const inventory = {
+		backpacks: 10,
+		jeans: 23,
+		hoodies: 12,
+		caps: 0,
+		shoes: 7
+	}
+
+	// make a nav for inventory
+	const nav = Object.keys(inventory).map(item => `<li>${item}</li>`).join('');
+	console.log(nav);
+
+	// how many values we have
+	const totalInventory = Object.values(inventory).reduce((a, b) => a + b);
+	console.log(totalInventory);
+
+	// Print an inventory list with numbers
+	Object.entries(inventory).forEach(([key, val]) => {
+		console.log(key, val);
+	});
+
+
+	// In a for, you can BREAK from the iteration... sometimes can be useful
+	for (const [key, val] of Object.entries(inventory)) {
+		console.log(key)
+		if(val === 0) {
+			console.log(`The value is 0, please refill the next item ${key}`)
+			break;	
+		}
+	}
+
+</script>
+</body>
+</html>
